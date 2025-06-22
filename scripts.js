@@ -1,21 +1,36 @@
-const btnFilter = document.getElementById('btn-filter');
-const menuContainer = document.querySelector('.menu');
+const btnMostrar = document.querySelector('.container-button button:nth-child(1)');
+const btnMapear = document.querySelector('.container-button button:nth-child(2)');
+const btnSomar = document.querySelector('.container-button button:nth-child(3)');
+const btnFiltrar = document.querySelector('#btn-filter');
 
-btnFilter.addEventListener('click', () => {
-  // Limpa o conteúdo atual
-  menuContainer.innerHTML = '';
+btnMostrar.addEventListener('click', mostrarTudo);
+btnMapear.addEventListener('click', mapearNomes);
+btnSomar.addEventListener('click', somarTudo);
+btnFiltrar.addEventListener('click', filtrarVeganos);
 
-  // Filtra apenas os produtos veganos
-  const veganos = menuOptions.filter(item => item.vegan);
+const menu = document.querySelector('.menu');
 
-  // Exibe os produtos veganos
-  veganos.forEach(item => {
-    menuContainer.innerHTML += `
-      <li>
-        <img src="${item.src}" alt="${item.name}" />
-        <p>${item.name}</p>
-        <p class="preco">R$ ${item.price},00</p>
-      </li>
-    `;
+
+
+
+function mostrarTudo() {
+  menuOptions.forEach(item => {
+    console.log(`${item.name} - R$ ${item.price}`);
   });
-});
+}
+
+function mapearNomes() {
+  const nomes = menuOptions.map(item => item.name);
+  console.log(nomes);
+}
+
+function somarTudo() {
+  const total = menuOptions.reduce((acc, item) => acc + item.price, 0);
+  console.log(`Total: R$ ${total}`);
+}
+
+btnFiltrar.addEventListener('click', filtrarVeganos);
+function filtrarVeganos() {
+  const veganos = menuOptions.filter(item => item.vegan);
+  console.log(veganos);
+}
