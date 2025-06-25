@@ -32,8 +32,6 @@ function renderMenu(products) {
 
 
 
-
-
 function mostrarTudo() {
   menuOptions.forEach(item => {
     renderMenu(menuOptions);
