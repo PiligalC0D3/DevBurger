@@ -33,10 +33,9 @@ function renderMenu(products) {
 
 
 function mostrarTudo() {
-  menuOptions.forEach(item => {
     renderMenu(menuOptions);
-  });
 }
+
 
 function mapearNomes() {
   const nomes = menuOptions.map(item => item.name);
@@ -49,7 +48,6 @@ function mapearNomes() {
     menuList.appendChild(li);
   });
 }
-
 
 function somarTudo() {
   const total = menuOptions.reduce((acc, item) => acc + item.price, 0);
