@@ -3,14 +3,10 @@ const btnMapear = document.querySelector('.container-button button:nth-child(2)'
 const btnSomar = document.querySelector('.container-button button:nth-child(3)');
 const btnFiltrar = document.querySelector('#btn-filter');
 
-
 btnMostrar.addEventListener('click', mostrarTudo);
 btnMapear.addEventListener('click', mapearNomes);
 btnSomar.addEventListener('click', somarTudo);
 btnFiltrar.addEventListener('click', filtrarVeganos);
-
-const menu = document.querySelector('.menu');
-
 
 const menuList = document.querySelector('.menu');
 
@@ -30,12 +26,10 @@ function renderMenu(products) {
   });
 }
 
-
-
 function mostrarTudo() {
-    renderMenu(menuOptions);
+  menuList.classList.add('show'); // Adiciona a classe para mostrar o menu
+  renderMenu(menuOptions); // Só mostra ao clicar no botão
 }
-
 
 function mapearNomes() {
   const nomes = menuOptions.map(item => item.name);
@@ -57,13 +51,7 @@ function somarTudo() {
   `;
 }
 
-
 function filtrarVeganos() {
   const veganos = menuOptions.filter(item => item.vegan);
   renderMenu(veganos);
 }
-
-document.querySelector('.container-button button:nth-child(1)').addEventListener('click', mostrarTudo);
-document.querySelector('.container-button button:nth-child(2)').addEventListener('click', mapearNomes);
-document.querySelector('.container-button button:nth-child(3)').addEventListener('click', somarTudo);
-document.querySelector('#btn-filter').addEventListener('click', filtrarVeganos);
