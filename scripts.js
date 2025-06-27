@@ -57,7 +57,9 @@ function somarTudo() {
   const total = menuOptions.reduce((acc, item) => acc + item.price, 0);
 
   menuList.innerHTML = `
-    <li><p>Total dos produtos: <strong>R$ ${total},00</strong></p></li>
+    <li>
+      <p>Total dos produtos: <strong>R$ ${total},00</strong></p>
+    </li>
   `;
 }
 
