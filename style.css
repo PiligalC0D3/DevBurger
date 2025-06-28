@@ -7,6 +7,13 @@
 body {
     background-color: black;
     padding: 20px;
+    background-image: url("img/fundo.png");
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
@@ -25,7 +32,7 @@ p {
 }
 
 button {
-    background-color: #79cb15;
+    background-color: #5d8f20 ;
     border: none;
     border-radius: 5px;
     color: black;
